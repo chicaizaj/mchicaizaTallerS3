@@ -1,12 +1,83 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mchicaizaTS3.Views.NewPage1"
-             Title="NewPage1">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="mchicaizaTS3.Views.Principal"
+             Title="Principal">
+
+    <Grid>
+        
+        <Image Source="https://redi.cedia.edu.ec/members/UISRAEL.png"
+          Aspect="AspectFill"
+          Opacity="0.15"
+          IsEnabled="False"
+          />
+
+        <ScrollView>
+
+            <VerticalStackLayout Spacing="20" Padding="40" >
+
+                <Label Text="Formulario de Inscripción"
+               FontSize="22"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="DarkBlue"/>
+                
+                <Label Text="Complete la siguiente informacion para realizar su inscripcion."
+                       FontSize="22"
+                       HorizontalOptions="Center"
+                       TextColor="Gray"/>
+
+
+                <Frame CornerRadius="12" Padding="20" BackgroundColor="#f0f0f0">
+                    <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Datos Personales" FontAttributes="Bold" FontSize="18"/>
+
+                    <!--IDENTIFICACION Y FORMULARIO-->
+
+                    <Grid ColumnDefinitions="130,*,*,*" RowDefinitions="Auto">
+                        <Label Text="Identificacion: " Grid.Column="0" VerticalOptions="Center"/>
+                        <Picker x:Name="pickerIdentificacion" Grid.Column="1" SelectedIndexChanged="pickerIdentificacion_SelectedIndexChanged" >
+                            <Picker.Items>
+                                <x:String>Cédula</x:String>
+                                <x:String>Pasaporte</x:String>
+                                <x:String>RUC</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Entry x:Name="txtidentificacion" Grid.Column="2" Placeholder="Ingrese sus datos" TextChanged="txtidentificacion_TextChanged"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="120,10,*" RowDefinitions="Auto">
+                        <Label Text="Nombres: " Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="txtnombre" Grid.Column="2" Placeholder="Ingrese sus nombres" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="120,10,*" RowDefinitions="Auto">
+                        <Label Text="Apellido: " Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="txtapellido" Grid.Column="2" Placeholder="Ingrese sus nombres" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="115,10,*" RowDefinitions="Auto">
+                        <Label Text="Fecha: " Grid.Column="0" VerticalOptions="Center"/>
+                        <DatePicker x:Name="datefecha" Grid.Column="2" Format="dd/MM/yyyy" HorizontalOptions="Fill" Margin="5,0"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="120,10,*" RowDefinitions="Auto">
+                        <Label Text="Correo: " Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="txtcorreo" Keyboard="Email" Grid.Column="2" Placeholder="Ingrese un correo valido" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="120,10,*" RowDefinitions="Auto">
+                        <Label Text="Salario: " Grid.Column="0" VerticalOptions="Center"/>
+                        <Entry x:Name="txtsalario" Keyboard="Numeric" Grid.Column="2" Placeholder="Ingrese su salario" />
+                    </Grid>
+                    <Button Text="Enviar Datos"
+                            x:Name="btnenviardatos"
+                            Clicked="btnenviardatos_Clicked"
+                            BackgroundColor="DarkBlue"
+                            TextColor="White"/>
+            </VerticalStackLayout>
+            </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mchicaizaTS3.Views.MostrarDatos"
+             Title="MostrarDatos">
+
+    <Grid>
+
+        <Image Source="https://redi.cedia.edu.ec/members/UISRAEL.png"
+          Aspect="AspectFill"
+          Opacity="0.15"
+          IsEnabled="False"
+          />
+
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <Label Text="Tipo de Identificacion: " FontAttributes="Bold"/>
+                <Label x:Name="lblTipoIdentificacion" FontSize="18" TextColor="Black"/>
+
+                <Label Text="Numero de identificacion: " FontAttributes="Bold"/>
+                <Label x:Name="lblNumeroIdentificacion" FontSize="18" TextColor="Black"/>
+
+                <Grid ColumnDefinitions="Auto,Auto,Auto" RowDefinitions="Auto">
+                <Label Text="Nombre:   " FontAttributes="Bold"/>
+                <Label x:Name="lblnombres" FontSize="18" TextColor ="Black" Grid.Column="1" Grid.Row="0"  Margin="20,0,0,0"/>
+                <Label x:Name="lblapellidos" FontSize="18" TextColor ="Black" Grid.Column="2" Grid.Row="0" Margin="20,0,0,0" />
+                </Grid>
+
+                <Label Text="Aporte al IESS: " FontAttributes="Bold"/>
+                <Label x:Name="lbLaporteiess" FontSize="18" TextColor="Black"/>
+
+                <Button Text="Exportar"
+                  x:Name="btnexportar"
+                  Clicked="btnexportar_Clicked"
+                  BackgroundColor="Green"
+                  TextColor="White"
+                  Margin="20">
+                </Button>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
